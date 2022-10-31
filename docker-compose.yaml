@@ -4,8 +4,10 @@ services:
   db:
     image: mongo:5
     ports: 
-      - 27018:27017
+      - 27019:27017
     environment:
       MONGODB_DATABASE: nest-pokemon
     volumes:
-      - ./mongo:/data/db      
+      - mongodata:/data/db       
+volumes:
+  mongodata:      

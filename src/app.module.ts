@@ -10,7 +10,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
       rootPath: join(__dirname, '..', 'public'),
     }),
 
-    MongooseModule.forRoot('mongodb://localhost:27018/nest-pokemon'),
+    MongooseModule.forRoot('mongodb://localhost:27019/nest-pokemon'),
 
     PokemonModule,
   ],
