@@ -6,19 +6,31 @@
 
 1. Clone the repository
 2. Run
+
 ```
 yarn install
 ```
+
 3. Install Nest CLI
+
 ```
 npm i -g @nestjs/cli
 ```
+
 4. Setup database with docker
+
 ```
 docker compose up -d
 ```
 
+5. Rebuild the database with the seed
+
+```
+GET {{url}}/seed
+```
+
 ## Tech stack
-* Nest 
-* MongoDB
-* Mongoose
+
+- Nest
+- MongoDB
+- Mongoose
