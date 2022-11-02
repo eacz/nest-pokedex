@@ -9,7 +9,7 @@
 ```
 yarn install
 ```
-3. Have installed Nest CLI
+3. Install Nest CLI
 ```
 npm i -g @nestjs/cli
 ```
