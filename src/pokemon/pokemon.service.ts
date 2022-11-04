@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Error, isObjectIdOrHexString } from 'mongoose';
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
+import { PaginationDto } from './dto/pagination.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { Pokemon } from './entities/pokemon.entity';
 Error.MongooseServerSelectionError;
@@ -18,8 +19,15 @@ export class PokemonService {
     return pokemon;
   }
 
-  findAll() {
-    return `This action returns all pokemon`;
+  async findAll(paginationDto: PaginationDto) {
+    const { limit = 10, offset = 0 } = paginationDto;
+    const pokemons = await this.pokemonModel
+      .find()
+      .limit(limit)
+      .skip(offset)
+      .sort({ no: 1 })
+      .select('-__v');
+    return pokemons;
   }
 
   async findOne(term: string) {
