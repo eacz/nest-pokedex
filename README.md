@@ -43,3 +43,12 @@ GET {{url}}/seed
 - Nest
 - MongoDB
 - Mongoose
+
+# Production Build 
+
+1. Create file ```.env.prod ```
+2. Define production env vars 
+3. Create docker image
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
